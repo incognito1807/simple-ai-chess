@@ -1,6 +1,6 @@
 var board, game = new Chess();
 
-/*The "AI" part starts here */
+/*Bắt đầu thuật toán*/
 
 // hàm đệ quy quay lui
 var minimaxRoot = function(depth, game, isMaximisingPlayer) {
@@ -319,3 +319,9 @@ var cfg = {
     onSnapEnd: onSnapEnd
 };
 board = ChessBoard('board', cfg);
+
+var undo = function () {
+    game.undo();
+    game.undo();
+    board.position(game.fen());
+}
